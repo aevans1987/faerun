@@ -1,0 +1,20 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: default-headers
+  namespace: default
+spec:
+#  plugin:
+#    cloudflarewarp:
+#      disableDefault: false
+  headers:
+    browserXssFilter: true
+    contentTypeNosniff: true
+    forceSTSHeader: true
+    stsIncludeSubdomains: true
+    stsPreload: true
+    stsSeconds: 15552000
+    customFrameOptionsValue: SAMEORIGIN
+    customRequestHeaders:
+      X-Forwarded-Proto: https
+#      X-Real-IP: Cf-Connecting-IP

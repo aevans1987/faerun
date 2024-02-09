@@ -1,0 +1,12 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+    name: real-ip
+    namespace: default
+spec:
+    plugin:
+        real-ip:
+            Proxy:
+                - proxyHeadername: Cdn-Loop
+                  proxyHeadervalue: cloudflare
+                  realIP: Cf-Connecting-IP
