@@ -1,0 +1,15 @@
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: unrelated-family
+  namespace: default
+spec:
+  issuerRef:
+    name: letsencrypt-production
+    kind: ClusterIssuer
+  secretName: unrelated-family-tls
+  commonName: "*.unrelated.family"
+  dnsNames:
+    - "unrelated.family"
+    - "*.unrelated.family"
