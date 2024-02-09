@@ -1,0 +1,18 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: ntfy-route
+  namespace: default
+  annotations: 
+    kubernetes.io/ingress.class: traefik-external
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(`ntfy.unrelated.family`)
+      kind: Rule
+      services:
+        - name: ntfy-service
+          port: 80
+  tls:
+    secretName: unrelated-family-tls

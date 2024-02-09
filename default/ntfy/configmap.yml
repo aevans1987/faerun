@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ntfy
+  namespace: default
+data:
+  server.yml: |
+    # Template: https://github.com/binwiederhier/ntfy/blob/main/server/server.yml
+    base-url: https://ntfy.unrelated.family
+    auth-file: "/var/lib/ntfy/user.db"
+    auth-default-access: "deny-all"
+    enable-signup: false
+    enable-login: true
