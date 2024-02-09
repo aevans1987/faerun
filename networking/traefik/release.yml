@@ -1,0 +1,136 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: traefik
+  namespace: networking
+spec:
+  interval: 5m
+  chart:
+    spec:
+      chart: traefik
+      sourceRef:
+        kind: HelmRepository
+        name: traefik
+        namespace: networking
+      interval: 1m
+  values:
+    globalArguments:
+      - "--global.sendanonymoususage=false"
+      - "--global.checknewversion=false"
+    #  - "--experimental.plugins.enabled=true"
+    #  - "--experimental.plugins.real-ip.modulename=github.com/Paxxs/traefik-get-real-ip"
+    #  - "--experimental.plugins.real-ip.version=v1.0.2"
+
+    additionalArguments:
+      - "--serversTransport.insecureSkipVerify=true"
+    #  - "--providers.file.filename=/data/providers.yaml"
+      - "--log.level=INFO"
+
+    deployment:
+      enabled: true
+      replicas: 3
+      annotations: {}
+      podAnnotations: {}
+      additionalContainers: []
+      initContainers: []
+
+    ports:
+      web:
+        redirectTo:
+          port: websecure
+          priority: 10
+      websecure:
+        forwardedHeaders:
+          trustedIPs:
+            - 173.245.48.0/20
+            - 103.21.244.0/22
+            - 103.22.200.0/22
+            - 103.31.4.0/22
+            - 141.101.64.0/18
+            - 108.162.192.0/18
+            - 190.93.240.0/20
+            - 188.114.96.0/20
+            - 197.234.240.0/22
+            - 198.41.128.0/17
+            - 162.158.0.0/15
+            - 104.16.0.0/13
+            - 104.24.0.0/14
+            - 172.64.0.0/13
+            - 131.0.72.0/22
+            - "10.0.0.0/8"
+            - "172.16.0.0/12"
+            - "192.168.0.0/16"
+    #      insecure: true
+        proxyProtocol:
+          trustedIPs:
+            - 173.245.48.0/20
+            - 103.21.244.0/22
+            - 103.22.200.0/22
+            - 103.31.4.0/22
+            - 141.101.64.0/18
+            - 108.162.192.0/18
+            - 190.93.240.0/20
+            - 188.114.96.0/20
+            - 197.234.240.0/22
+            - 198.41.128.0/17
+            - 162.158.0.0/15
+            - 104.16.0.0/13
+            - 104.24.0.0/14
+            - 172.64.0.0/13
+            - 131.0.72.0/22
+            - "10.0.0.0/8"
+            - "172.16.0.0/12"
+            - "192.168.0.0/16"
+    #      insecure: true
+        tls:
+          enabled: true
+        middlewares:
+          - "default-default-headers@kubernetescrd"
+          - "default-real-ip@kubernetescrd"
+
+    ingressRoute:
+      dashboard:
+        enabled: false
+
+    providers:
+      kubernetesCRD:
+        enabled: true
+        ingressClass: traefik-external
+        allowExternalNameServices: true
+      kubernetesIngress:
+        enabled: true
+        allowExternalNameServices: true
+        publishedService:
+          enabled: false
+
+    rbac:
+      enabled: true
+
+    service:
+      enabled: true
+      type: LoadBalancer
+      annotations: {}
+      labels: {}
+      spec:
+        loadBalancerIP: 10.2.50.15 # this should be an IP in the MetalLB range
+      loadBalancerSourceRanges: []
+      externalIPs: []
+
+    #additionalVolumeMounts:
+    #  - name: 'plugins'
+    #    mountPath: "/plugins-storage"
+    #    emptyDir: {}
+    #    readOnly: false
+
+    #persistence:
+    #  enabled: true
+    #  storageClass: longhorn
+    experimental:
+      plugins: 
+    #    enabled: true
+        real-ip:
+          moduleName: github.com/Paxxs/traefik-get-real-ip
+          version: v1.0.2
+    #    cloudflarewarp:
+    #      moduleName: "github.com/BetterCorp/cloudflarewarp"
+    #      version: "v1.3.3"
