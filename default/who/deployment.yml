@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: who
+spec:
+  selector:
+    matchLabels:
+      app: who
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: who
+    spec:
+      containers:
+      - name: who
+        image: traefik/whoami
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80
+          name: http

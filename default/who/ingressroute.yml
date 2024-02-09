@@ -1,0 +1,21 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: who
+  namespace: default
+  annotations: 
+    kubernetes.io/ingress.class: traefik-external
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(`who.unrelated.family`)
+      kind: Rule
+      services:
+        - name: who
+          port: 80
+#      middlewares:
+#        - name: default-headers
+#        - name: real-ip
+  tls:
+    secretName: unrelated-family-tls
