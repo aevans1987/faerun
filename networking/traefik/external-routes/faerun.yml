@@ -1,0 +1,32 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: faerun-ingress-route
+  namespace: networking
+  annotations: 
+    kubernetes.io/ingress.class: traefik-external
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(`faerun.unrelated.family`)
+      kind: Rule
+      services:
+        - name: faerun-cluster
+          port: 8006
+  tls:
+    secretName: unrelated-family-tls
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: faerun-cluster
+  namespace: networking
+spec:
+  type: ExternalName
+  externalName: "10.2.50.250"
+  ports:
+    - name: https
+      port: 8006
+      protocol: TCP
+      targetPort: 8006
