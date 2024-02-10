@@ -1,0 +1,79 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: pgadmin
+  namespace: database
+spec:
+  interval: 5m
+  chart:
+    spec:
+      chart: pgadmin4
+      sourceRef:
+        kind: HelmRepository
+        name: runix
+        namespace: database
+      interval: 1m
+  values:
+  # Default values for pgAdmin4.
+
+    replicaCount: 1
+
+    ## pgAdmin4 container image
+    ##
+    image:
+      registry: docker.io
+      repository: dpage/pgadmin4
+      # Overrides the image tag whose default is the chart appVersion.
+      tag: ""
+      pullPolicy: IfNotPresent
+
+    service:
+      type: ClusterIP
+      clusterIP: ""
+      loadBalancerIP: ""
+      port: 80
+      targetPort: 80
+      # targetPort: 4181 To be used with a proxy extraContainer
+      portName: http
+    existingSecret: "pga-secret"
+    ## @param secretKeys.pgadminPasswordKey Name of key in existing secret to use for default pgadmin credentials. Only used when `existingSecret` is set.
+    ##
+    secretKeys:
+      pgadminPasswordKey: password
+    env:
+      email: ade1987+pga@pm.me
+    persistentVolume:
+      enabled: true
+      accessModes:
+        - ReadWriteOnce
+      size: 10Gi
+      storageClass: "longhorn"
+    securityContext:
+      runAsUser: 5050
+      runAsGroup: 5050
+      fsGroup: 5050
+    livenessProbe:
+      initialDelaySeconds: 30
+      periodSeconds: 60
+      timeoutSeconds: 15
+      successThreshold: 1
+      failureThreshold: 3
+
+    readinessProbe:
+      initialDelaySeconds: 30
+      periodSeconds: 60
+      timeoutSeconds: 15
+      successThreshold: 1
+      failureThreshold: 3
+    test:
+      ## Container image for test-connection.yaml
+      image:
+        registry: docker.io
+        repository: busybox
+        tag: latest
+      ## Resources request/limit for test-connection Pod
+      resources: {}
+      securityContext:
+        runAsUser: 5051
+        runAsGroup: 5051
+        fsGroup: 5051
