@@ -1,15 +1,14 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: postgres
+  name: postrgres
   namespace: database
 spec:
   interval: 5m
+  targetNamespace: database
   chart:
     spec:
       chart: postgresql-ha
       sourceRef:
-        kind: HelmRepository
+        kind: OCIRepository
         name: postgresql-ha
-        namespace: database
-      interval: 1m
