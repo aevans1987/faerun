@@ -9,7 +9,7 @@ spec:
     spec:
       chart: postgresql-ha
       sourceRef:
-        kind: OCIRepository
+        kind: HelmRepository
         name: postgresql-ha
         namespace: database
       interval: 1m
