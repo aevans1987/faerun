@@ -10,6 +10,6 @@ spec:
       chart: postgresql-ha
       sourceRef:
         kind: OCIRepository
-        name: jetstack
+        name: postgresql-ha
         namespace: database
       interval: 1m
