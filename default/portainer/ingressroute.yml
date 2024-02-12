@@ -1,0 +1,18 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: portainer-route
+  namespace: default
+  annotations: 
+    kubernetes.io/ingress.class: traefik-external
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(`artificer.unrelated.family`)
+      kind: Rule
+      services:
+        - name: portainer
+          port: 9000
+  tls:
+    secretName: unrelated-family-tls
