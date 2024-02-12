@@ -9,7 +9,7 @@ spec:
   entryPoints:
     - websecure
   routes:
-    - match: Host(`guard.unrelated.family`)
+    - match: Host(`sso.unrelated.family`)
       kind: Rule
       services:
         - name: authentik
