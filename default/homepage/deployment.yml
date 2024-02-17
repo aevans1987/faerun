@@ -11,7 +11,7 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: homepage
+      app: who
   replicas: 3
   progressDeadlineSeconds: 600
   revisionHistoryLimit: 1
