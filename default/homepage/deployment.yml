@@ -3,6 +3,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: homepage
+  labels:
+    app: homepage
   namespace: default
   annotations:
     reloader.stakater.com/auto: "true"
