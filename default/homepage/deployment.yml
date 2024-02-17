@@ -4,14 +4,12 @@ kind: Deployment
 metadata:
   name: homepage
   namespace: default
-  labels:
-    app: homepage
   annotations:
     reloader.stakater.com/auto: "true"
 spec:
   selector:
     matchLabels:
-      app: who
+      app: homepage
   replicas: 3
   progressDeadlineSeconds: 600
   revisionHistoryLimit: 1
