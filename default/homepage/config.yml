@@ -67,7 +67,7 @@ data:
     - Hypervisor:
         - Proxmox:
             icon: proxmox.svg
-            href: "{{HOMEPAGE_VAR_PROXMOX_URL}}"
+            href: {{HOMEPAGE_VAR_PROXMOX_URL}}
             description: waterdeep
             widget:
                 type: proxmox
