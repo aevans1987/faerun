@@ -85,9 +85,9 @@ spec:
                 protocol: ENC[AES256_GCM,data:Oa2/,iv:V7q85bQVtO0cMX9/zNF97syY6uRmZuYxEHGc/fldmpc=,tag:ZixxnX+NqkmSgdfA6NSZNQ==,type:str]
                 labels: {}
                 annotations: {}
-        prometheus:
-            serviceMonitor:
-                create: ENC[AES256_GCM,data:X8QFQQ==,iv:merVXVdbg+/Nu4g1ve1OTvrTP19fGDG4wuWjJu/5ifA=,tag:XCZmpEMCqo+90MTJ9L0w/w==,type:bool]
+            metrics:
+                serviceMonitor:
+                    enabled: ENC[AES256_GCM,data:mwPPXg==,iv:b4nUwNbIIyMXYferTsAuYIKbADqqIWsWQ2jqvaIf0cQ=,tag:RF3avz30WxFvz+1fnF/YIA==,type:bool]
         geoip:
             #ENC[AES256_GCM,data:cr5kz9yEuctXkeFehJcuUhShGzSbPKDnZxMmQ6uT/oL1u0DBDEQP8HUX3MYwe8Rf3ht9SNjuwfQctrR71XN0LDPax0BWxQ==,iv:hVWs7NdMW2SghP+60hmA3cwlANVVC39AUptJkPdpr5c=,tag:BVlz2nsia5VLtHv2MfJNPA==,type:comment]
             enabled: ENC[AES256_GCM,data:TA4rCLs=,iv:iFORgdUhiN9j0hFBJM+wAWHNQHzRjPP9LMikCn/8LZo=,tag:Wf528P5wNpQtbSJ8gNPgNg==,type:bool]
@@ -122,8 +122,8 @@ sops:
             dGx4b1ZNS3VrNXNEOHViWE5VZGZETWcKay9hGaSrpy8GopUzZSbixxtNs3lCS6Vb
             S824VTMzrV/AJhn4zgVM3/ZgQUROkqD/xg2Ej46jxT+29Yj9cxZyCg==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2024-02-22T17:09:00Z"
-    mac: ENC[AES256_GCM,data:J/znbBrqK3OImgodh4UCxks5SUrmpA3SdNfNMr27ELBdAj+PmB4GAkUuy3imNFh+3+lsOOts8r3t1DzjTdHm6uGf8elXD/u4w2Qc9h8uLg22h2ZdsVgUibfyqHdCNymuh/8ncHNg5IR8W44bBGvSJPinCmi8KwhtkRTxBZp7DPY=,iv:IMab+5LtESz8Pty4j65ROD0Ss57+hjZejSXCRkWXhe4=,tag:+XRt+UkZmNOKmGdm/k1vDg==,type:str]
+    lastmodified: "2024-02-22T17:12:19Z"
+    mac: ENC[AES256_GCM,data:e/srLl21W29PdU6j8meY6apeJI19EewV9HnV4p/UzONFlDoK8gmPvkxYrsdLhliBxe83EODApfLBX9CA41nGINeKzrAgmcSS4fwcE6l+g3GK5N8R4N4dtNmFmN41kH7B9fovmCMLCCpmYZOgcGdRCNoSGWnyL3CjXd+3WCpklsA=,iv:kvgO8QMr7mQFjaHj4jCBiarNpPK/462vu01z9k6RQjg=,tag:8/duT8Udf+miFElZdzSTNA==,type:str]
     pgp: []
     encrypted_regex: ^(data|spec|values)$
     version: 3.8.1
