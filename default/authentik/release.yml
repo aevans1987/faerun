@@ -15,7 +15,7 @@ spec:
             interval: ENC[AES256_GCM,data:Fs0=,iv:B54EWMWRGRxOeywgwD5x3fPiY2OUuCmh/dwcDifLAtU=,tag:zgY2ipLr7nijmSEujh+ULQ==,type:str]
     values:
         image:
-            tag: ENC[AES256_GCM,data:hoVSk9wL4LTW,iv:1ET6ut4lKb8TvjznQ6H4438J9slU2pgfntuS/8TK6Xo=,tag:Kkp9PgE2lGx1RUdb1hltpw==,type:str]
+            tag: ENC[AES256_GCM,data:7Z+BrIt8/fw=,iv:GITGyLcp6km68sasnHrHmeMrBJ8oI8yFte+8L5PmAUY=,tag:ksE1F45y8cyNUigmAfAgBQ==,type:str]
         ingress:
             enabled: ENC[AES256_GCM,data:fNk2JY0=,iv:8SALKObV3A/uo/eWCFwKZQtR4EQB3XdF8grhAk2h4aw=,tag:d7DEPqfrosOnRU9l93yMNw==,type:bool]
         authentik:
@@ -147,8 +147,8 @@ sops:
             dGx4b1ZNS3VrNXNEOHViWE5VZGZETWcKay9hGaSrpy8GopUzZSbixxtNs3lCS6Vb
             S824VTMzrV/AJhn4zgVM3/ZgQUROkqD/xg2Ej46jxT+29Yj9cxZyCg==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2024-02-11T23:04:05Z"
-    mac: ENC[AES256_GCM,data:72KHSiqrYejgkDVoTJynq5bpTG9fSHzzJoiI66qlQYPvsXrmhJZKXE1nSUxQAu0F/ZfuJCw/jkPX8OfgHIy5f6Ch5KaKrKD8Ds5a7/ZpT2ab09dcWmNTVp7BpOUKd3e7onLl6qjgpBntg8lCXfogiBMQrI0Ze7HvLBOzfJngrGs=,iv:jK2xLVoDFsdVxLFQHI+TOKtQbFMO+UsHmRl4Sq2ef1Y=,tag:metZa0CqofNEeyEAZLf1mg==,type:str]
+    lastmodified: "2024-02-22T16:32:18Z"
+    mac: ENC[AES256_GCM,data:wU/6AewsdMgv0PKU21s9XiXKqgkdRPXEgyromsxlWuuymqBmhf7fArNFzSG6oYhsmg1n3PRMeqXhsrYpHcWTWDYyfN4+LntwFFCDTbBof/J8OOqyI87N+u5ZUGfwv+66ex65IhnWFuG+ma+sLX/tveWWq/MNHqTrmmFVF6ADHHE=,iv:g+kp+7YQW4u/vW44Vkj+WbnmbxsfYJdtxRjxa8J/zJI=,tag:ruIUXQ1IQUVh3/eXTHqwSA==,type:str]
     pgp: []
     encrypted_regex: ^(data|spec|values)$
     version: 3.8.1
