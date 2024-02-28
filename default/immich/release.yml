@@ -1,49 +1,63 @@
-apiVersion: helm.toolkit.fluxcd.io/v2beta1
-kind: HelmRelease
+apiVersion: ENC[AES256_GCM,data:4VkdSnb3skr7HRJIXSyMl+DuBVTtnOBHsQPyJYTM,iv:QZioeWyt8mSWnrbBCOW1m1un9SKjOYP0uYlbZKJOXZI=,tag:UJUvKkPqzyRcL9YkZ8Z5Mg==,type:str]
+kind: ENC[AES256_GCM,data:E1DVdlXae17pqnA=,iv:t3mty8SXii7COKGbKe6js5fITKso17TZ6JhXOZO0mgE=,tag:YicbRqQ57+gW1Uw/GkTmvA==,type:str]
 metadata:
-  name: immich
-  namespace: default
+    name: ENC[AES256_GCM,data:2WpVk2y/,iv:NfW7dMmMOxQV8baK+r4qM/jXecHl+KFm4K6DSVpb6fI=,tag:8b/JKFcbcYpKLtZtYoyu9g==,type:str]
+    namespace: ENC[AES256_GCM,data:zmyMEDXaPA==,iv:m7VWjnJcdkZ3ll7BELFUMCOwfsWzQQXdrFYOoHPs5QM=,tag:hG1NK7u2tAnXzBYz83wsVw==,type:str]
 spec:
-  interval: 5m
-  chart:
-    spec:
-      chart: immich
-      sourceRef:
-        kind: HelmRepository
-        name: immich
-        namespace: default
-      interval: 1m
-  values:
-    ## This chart relies on the common library chart from bjw-s
-    ## You can find it at https://github.com/bjw-s/helm-charts/tree/main/charts/library/common
-    ## Refer there for more detail about the supported values
-
-    # These entries are shared between all the Immich components
-
-    env:
-      REDIS_HOSTNAME: '{{ printf "%s-redis-master" .Release.Name }}'
-      DB_HOSTNAME: "postgres-postgresql-ha-pgpool.networking.svc.cluster.local"
-      DB_USERNAME: "immich"
-      DB_DATABASE_NAME: "immich"
-      # -- You should provide your own secret outside of this helm-chart and use `postgresql.global.postgresql.auth.existingSecret` to provide credentials to the postgresql instance
-      DB_PASSWORD: ")an8!8tyR+9.2gXw+r7c"
-      IMMICH_MACHINE_LEARNING_URL: '{{ printf "http://%s-machine-learning:3003" .Release.Name }}'
-
-    image:
-      tag: v1.96.0
-
-    immich:
-      persistence:
-        # Main data store for all photos shared between different components.
-        library:
-          # Automatically creating the library volume is not supported by this chart
-          # You have to specify an existing PVC to use
-          existingClaim: immich-pvc
-
-    # Dependencies
-
-    redis:
-      enabled: true
-      architecture: standalone
-      auth:
-        enabled: false
+    interval: ENC[AES256_GCM,data:Ynw=,iv:u6BVZkHJOjwCibdDhAF39zm5d67JJXBcToKCC6kbvvg=,tag:5Jpn0ydNTK4e3WXp8lrbxg==,type:str]
+    chart:
+        spec:
+            chart: ENC[AES256_GCM,data:0i8X/h94,iv:k3Hoo3q00UA2FJK0i6cN+dNUK1yeUoz8Zhhpz3nJJLM=,tag:ZCznUBIAbbG4+S80VrFjoA==,type:str]
+            sourceRef:
+                kind: ENC[AES256_GCM,data:7qgxvrDjjHDa+peq+u8=,iv:dHU37wPTmDQYPdnaX5u34oK9echwaqx4b7IGiidnaLs=,tag:WOo7z97pCGSsspQfMlHo0w==,type:str]
+                name: ENC[AES256_GCM,data:CYK4dCcG,iv:6omimuVjutBGfz/SMn+5xV16X/l4cdG6I0IfqESOmvs=,tag:ZlomTmS+xOXpRKuXCCHb7g==,type:str]
+                namespace: ENC[AES256_GCM,data:2Z/tBonZ7Q==,iv:OV0aRFjpZl/JMwv0UPLCSR26kvh5VdjF4GO8DN/XlrM=,tag:JFBPM4Um5iWgzKG3hWC34Q==,type:str]
+            interval: ENC[AES256_GCM,data:6SQ=,iv:u/VfAT6br6zIhO4d+aFvmXuxVTfgnpAz5jOEdwMqZeQ=,tag:w8mh+pE2T3XOsxEO+Tn2aw==,type:str]
+    values:
+        #ENC[AES256_GCM,data:lCGrr7KBKrp7anm2qCuwW9fkX2kmPNHMeYeM2mUjn7ZQCTdqXH+9o91CmZ+RY688/ooTPmDnLoASjQ==,iv:6qfF9xgDtielzfSaxDd6aIDvizRTaoB8CeCYqGdcNZo=,tag:V6KxI9skjHlHBZx+Gz9Abg==,type:comment]
+        #ENC[AES256_GCM,data:tqUTAIgrFE7BoMIBggF3rg6vEZuFhcdJiAVmFHiPjEEMiIyHZm6AhwlQqxgO+SLKSfGxfhxhYdqvrZaX5uYWkNwlHCRR0K27zb163XF504P70i0cM05KWAE=,iv:rx/7MnYZEk7NbWd946uwHivXu5vW+c/Ht+J/YB4RIVs=,tag:dHHLoaX8bzmbgOOzBQyAxg==,type:comment]
+        #ENC[AES256_GCM,data:n0wqlE51z14+GtSLkH1uqvkO/xkY3nHEbXYKAJeTHzr6A/Yn3jxmfwKyrSNiYgq6MNtXzunykk4=,iv:l7DoM8xaOARhw5WBOY6fIBKoEjHetsE/lmImUidLt30=,tag:Lwel3iyqL8wNklWUdATZuw==,type:comment]
+        #ENC[AES256_GCM,data:EjurgN21l4+4paSZMU/VHZnP5q7023QsxaJuqpifFx3x8v9tu6hmyvhWT8YJipsXAGa1cx3NOQ5txz0=,iv:bq1Fq4KcmAXog3ztue250t3gk4i0UEoWACinMB51Jhk=,tag:cu3quyzXgD973xjbi/loWw==,type:comment]
+        env:
+            REDIS_HOSTNAME: ENC[AES256_GCM,data:y+o7h2A+geeVnj/d4fzjBBfMQnLOu4bbtyOBv3zQflHHzcKzdjsLB9vwuho=,iv:eG0L7x5uQ/6eoWDsjCnPL6DEcTvkh9XAgNnc23QkJfU=,tag:GXU36uCnrmmDA4vwImk4uQ==,type:str]
+            DB_HOSTNAME: ENC[AES256_GCM,data:7g3xK6G/w+E7v6f5BZdJ95gevEag2Q6umGY8PgduEszirGN4RMnT52cjziWZlWLNs1cAzNrW8Y6q7g==,iv:dhhj7BVAIYlu7rf9LirwYGYsKuMQGccOi1hJ34gfSQk=,tag:15PhSExM+zvbPuXx23ZbeA==,type:str]
+            DB_USERNAME: ENC[AES256_GCM,data:DpbBw89D,iv:hQ1c+kVfBIyxqx9sG3tvTzoySJ5kr6WjiREbyu/eKvg=,tag:pwK4ocWSgEl96MMRbcXGyA==,type:str]
+            DB_DATABASE_NAME: ENC[AES256_GCM,data:uO/alvk+,iv:AUq15XljMEudaC74j6JTFVarnis2btLmI7cNT1qKP5k=,tag:7k80AQl93Sb63aLL3Y0Z4w==,type:str]
+            #ENC[AES256_GCM,data:cnJdOqFJ1ekfFyxjmu5x9vjcB82LlekKiaivZX8yfWXbNp7uomq5Ctj5tCEL/moX/oSLebN4IVRN3fUISqAY3Mdob1VX9F/bbkYyOJYIBVtq6AUQKCL4eu0Su0EvRgO+v/mCTnfN9lqwZ4U/rdYryVy+IHlRS9KTzGa3hVdD2eLIiMGpkw+fzwc9XJFlXcxRplatj+a54vYXBKXtqWutiaks9xYnm9QnoSEgKeW7,iv:TEfVvQlO3wl4XXmc7FaThlfboo6zAm9vK1kl59CElzo=,tag:jLYgdDMs2l1AASfJlNNf6A==,type:comment]
+            DB_PASSWORD: ENC[AES256_GCM,data:qVir12foOu8BUidLDtx9jscq1OfNH7YpbG5j5jWbT1EN3DraKboTXyec,iv:Rf1Rols8C7TxJS+zzFm2kdCBWSZP9aSYKz+taBCjoPg=,tag:BNXOOcA9vrvo0Nz2Agl7VA==,type:str]
+            IMMICH_MACHINE_LEARNING_URL: ENC[AES256_GCM,data:9IDCzsRs6owtxpeSpHwFe8gtnpAcprw4O37QQmEo1AA2Uh6lzWfz6uHNrXIwfEcUEkT7RilhPWIkFLOB,iv:oxqwlbjVor0mtBAUoMlHuwvrMMAD7DvcarP9Hcp7IRM=,tag:4wh5mz0aunzYvx3uwcQlJQ==,type:str]
+        image:
+            tag: ENC[AES256_GCM,data:uEocam28Gg==,iv:WWJowdvSeuKJtxpDXE6nGnStUkyDxpxpju+AHsAylzc=,tag:AViH1u/u+K06ks1X5jyIsA==,type:str]
+        immich:
+            persistence:
+                #ENC[AES256_GCM,data:diCAO779ZNHyZU/25Ms6wokiRS0V343sQ9aQ4Vo9B2ysLV35GnlVLbMbUgPyYeOp0pGL+J7rZzy8qfH3P32vuKDb6EI=,iv:S2BBEKQWaF/jjdCcTxqbUV6NZGNIZgGFtturKSOhmDc=,tag:aRUbhJBmBLaJH1e+9NSlbQ==,type:comment]
+                library:
+                    #ENC[AES256_GCM,data:DCS79J4u1m7UR+RooQUoMdJpT0gWeoYFx9EVvqgA7s9xLKv4vnnCZjsnsJzWexDQ71uP6RqJq3QkD9KiDYI5Q2UV2bP4dGOuuw==,iv:XsLBKJjHKduJh4CgOtjk5VicapH38O+YofIzmAfLwHc=,tag:w5oeE/1GMEGbBjO0vOTSEA==,type:comment]
+                    #ENC[AES256_GCM,data:lUccFVDftnSdXS37oAksb6E0ohmIBHw0FqdNj/IoNWdvGhmJVLcOuknxiA==,iv:LzyJl4j8PzRZRbjP5B7tkGst2rdonFmNyA7aFry2ZHQ=,tag:/hVwOWihKAXEFV46jk4znw==,type:comment]
+                    existingClaim: ENC[AES256_GCM,data:ocAcxU/+g8I7Wg==,iv:nR3AA2UTwFw1XRg9BtxX5brKAKBw8aRxD3y2leUqpiw=,tag:n4n/D8IGtWcj+/D9+8R8Fw==,type:str]
+        #ENC[AES256_GCM,data:PcsQXrfo75IS8mvk+g==,iv:bm3mAQl5KxV/s8CUDlRU2rT7vESNIv0x0OaSYO83CcI=,tag:QTRlGBaE84mdgggVjW2Z7w==,type:comment]
+        redis:
+            enabled: ENC[AES256_GCM,data:fliO7g==,iv:5K3bkog/Q0A5iUyrW7rOCrOvKAjv1z2KVGYXgahR+6c=,tag:UsSOIqJhcCIY4zcHbbriJQ==,type:bool]
+            architecture: ENC[AES256_GCM,data:F8RH6qRb7p8cZA==,iv:N99cB3qVfTOvTvuVV43HELBI+jfMuAgc2pEhVfqF+Cc=,tag:6DgTgq3N+BH9pk03uhynYA==,type:str]
+            auth:
+                enabled: ENC[AES256_GCM,data:+rijZU0=,iv:mUqiXe0XBBfnAXLY8Rdld3GswyjqrBl2FReWozLCYYk=,tag:nd+WZcb9ZSs+IKh76mr2BQ==,type:bool]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age1f38l3w2h64surqtq8qtcqqg9lfs7qqmtw8g9xp22fwl4esgcyvzsv4yjsg
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBZY2ZsSjJHYTl0eCs4TUNU
+            NFVPbkZHbkducWxJRExjbTE2NDlabURPWVY4CkZSWk5YbG01Wk9FeVl3RjBiS3dC
+            WkVzVTRLWWNYOTBVMUdOZCsxZlg5cmsKLS0tIDFOaXc2ZDZITzgwQlNraTdNczE4
+            QndsSmdZNGt4bGE4NjJqNk5sMnhuZmsKtiEer23gWWaWfqwfZr1lnjT6OWwj1zau
+            uJ+Yf/qklyYvRjAycR43rl+SbX3KNSOV6XHWWQZHUmhEcAW+Ks4Utg==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2024-02-28T13:50:17Z"
+    mac: ENC[AES256_GCM,data:rVbTq7oydTXm5TVRGMmvkYiTAkYxIahtSnZAcMhnSBbZtYIIdNsJoeqEIaNvmMkn6mOagrUScJ0+h3VZiqUACg12vqcQGI/H2punBs5D9TSvqlp/TsoDiPEqQXgoh86QUB1EZqG9yGUlHLN9FEM5ZjWZHwHDzw6lxYX3Ze66E5I=,iv:HwT+n2LhYDPvRKYNTPyA9QEdNM2Mafy2gNf0Oc/ugdQ=,tag:RSLSD+zS1rzzZqrqFIiqcA==,type:str]
+    pgp: []
+    unencrypted_suffix: _unencrypted
+    version: 3.8.1
