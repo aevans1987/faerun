@@ -7,6 +7,10 @@ spec:
   interval: 5m
   chart:
     spec:
+      valuesFrom:
+        - kind: ConfigMap
+          name: hostname
+          valuesKey: "rancher.local.unrelated.family"
       chart: rancher
       sourceRef:
         kind: HelmRepository
