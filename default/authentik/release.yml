@@ -74,6 +74,7 @@ spec:
                 host: ENC[AES256_GCM,data:9sC7F7NGbw69O9pMTefIrbrnYE/rOGvPkl44W0frLac=,iv:JLdkCCNqzr4M9Q5nVnFr4zuurEo4wgt7MEhfA488dLY=,tag:W4hAT7mY5j6TTj3AqjcJFA==,type:str]
                 password: ""
         server:
+            replicas: ENC[AES256_GCM,data:qQ==,iv:WBdkSKAYoSpst3kFh5TUFQRXpknjY4zf4E/S7GYJk2o=,tag:mneC/7fr8bPqZxPvNhrW8w==,type:int]
             service:
                 #ENC[AES256_GCM,data:f55uLDeQNg9EV+BFLefhIwiyZivFfcTKgRoaIn2AZDKY20igDqib2vnAInUTxYc=,iv:K/H2SbM+aZY/FYTGhx6Pxhxt0DjOGSlN3/6Dee4bg28=,tag:nvNMYVNXKJYWR9XsYWZOQg==,type:comment]
                 enabled: ENC[AES256_GCM,data:5Zb56g==,iv:/BbYe4s1aNkGNJDv4kUk/1oesewecBpWWcKWMeoxM3I=,tag:cGNEUeCHz8sKJ6k3wcqvEg==,type:bool]
@@ -91,7 +92,7 @@ spec:
                 geoip:
                     #ENC[AES256_GCM,data:5TUi3HoDIqCa+qHr3GUeklt7lzlR2B0An8Tr1pqn6P+MMdtfyw7hIDQfB2byBBR9BSA4T2j4b6JRoSMW5hAtC98/NOpsdA==,iv:NwX26Xe7kIZzdA8MCXlVLqgP85Ofw8UuwiysLBLUZt4=,tag:ZvWjGm57u0pnB/NArcHg7A==,type:comment]
                     enabled: ENC[AES256_GCM,data:jKn6mg==,iv:L2+gEUZxgSFLZZ483ReQ+M03wdOpnkpzQiz1iZiSOfw=,tag:44nrTPb/Z5uCvYw8SPkbzg==,type:bool]
-                    #ENC[AES256_GCM,data:72hb5lu1kTH66rs8/Sdk0tYZXWw+U95k6n2+DuHuHFfQ117lgio0TS/yF2Dc4XPkfwXxVxADGxsN/Gui,iv:xeeua5uf6aAnn6VG1VAmWYtz/IJrpjaEscxdUs1yb7o=,tag:y+0PGC7iBqIXHqE3M5Nqfw==,type:comment]
+                    #ENC[AES256_GCM,data:HpnDIAz0Tg2nqpWvWcDAYZtUOot2n3KMo0iL96yyBzX/LIOwQxEssor9Hlv5kcfECBWM0GIEtS+S0N93,iv:lqZ/umtOsW8tQ/gurcicoCgl2S6uqrfG73KKr4C24HQ=,tag:VUkvj+4/5OXLDXdeKDjzsA==,type:comment]
                     accountId: ENC[AES256_GCM,data:9my2uc4x,iv:98DySgb62gHjVNg3KCIcxrGr4kV08Lc8oDNBdXatDqY=,tag:SC0Po5jCjVMp2sUIfQH/Ug==,type:str]
                     #ENC[AES256_GCM,data:HpnDIAz0Tg2nqpWvWcDAYZtUOot2n3KMo0iL96yyBzX/LIOwQxEssor9Hlv5kcfECBWM0GIEtS+S0N93,iv:lqZ/umtOsW8tQ/gurcicoCgl2S6uqrfG73KKr4C24HQ=,tag:VUkvj+4/5OXLDXdeKDjzsA==,type:comment]
                     licenseKey: ENC[AES256_GCM,data:IynBH8/CcSVcVoSA57mX5LkTTC5lytz1ZI0IBMxGPGSiiJlCjaB2pQ==,iv:4ohMnh3OVaWRdWuT2FMgMX2yihcyl0WeGWy22GRVhcw=,tag:95lffPiNg52Tbnb5ka9xhw==,type:str]
@@ -101,6 +102,8 @@ spec:
                     updateInterval: ENC[AES256_GCM,data:TA==,iv:+cALJ3obiFIPRLltC/JANA8+LRzAijgQ6ui0yrzU/Qo=,tag:ZWP/trvBrliU9de0I1T11g==,type:int]
                     #ENC[AES256_GCM,data:a3xk+bdHYf4xAyB5C4OzQweZrzAsmZK7imreO3hC4mpea3g=,iv:7ngAr2njVNXVrJ4u4gTQ8jpgosFK+WKhf6eCoUTC9tE=,tag:cmSYUmy0S3BNJW4ZMPhzCg==,type:comment]
                     containerSecurityContext: {}
+        worker:
+            replicas: ENC[AES256_GCM,data:jA==,iv:RDoaOkFs7oDZtAx4p5OrayuNOJFIEhFsYIgHLnO8sAo=,tag:gxLYkv+D1nJYsCKNNf3kwg==,type:int]
         postgresql:
             #ENC[AES256_GCM,data:lLVSeO5QA4Ls7M4H1OgatfYey/EpPTFxcbKso5qIg9YTisIVXsZ2eAVEZS+Gr7o=,iv:6LcuDM8Ce2bBXpNYfzYCHzCz89HASh9W9zShA1d5m2I=,tag:pIhU0iuaGPJBnSsmPdv+kw==,type:comment]
             enabled: ENC[AES256_GCM,data:tftUf/A=,iv:Xq21LRUhOiUpRGIOYyo/0GUHAKQJJnVvFRaPNdPg3xQ=,tag:MLTUnbR/Zp2r+qy/KSckgg==,type:bool]
@@ -122,8 +125,8 @@ sops:
             dGx4b1ZNS3VrNXNEOHViWE5VZGZETWcKay9hGaSrpy8GopUzZSbixxtNs3lCS6Vb
             S824VTMzrV/AJhn4zgVM3/ZgQUROkqD/xg2Ej46jxT+29Yj9cxZyCg==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2024-02-22T19:36:37Z"
-    mac: ENC[AES256_GCM,data:RHf77VYMrbbAIBEwlZ4DMc67MutlpkXIRTkSkMdir5OacGeVg5sbKadnMiibKHMrnEBZrcFNo7m/kDbzWBPiJllBygkH84bBPk5jX7ZR7w5TUTfH+3q/WJjc9vtSq3NiG+S25AupWT6sBJp4DBR3o5FHIOXS13PcbSxhxU0H72U=,iv:SZgWmrlP4XaLMV2vS0hr269sM3L9Hyzz+rPAu7gDsCA=,tag:7ebgonFkmsyz7gUwS20Ohw==,type:str]
+    lastmodified: "2024-02-28T14:40:41Z"
+    mac: ENC[AES256_GCM,data:v8NTz2/mb9kVIfbMjIZmCZ+YPPNBIIojwKtHTLdKToXshZxknmrqteVYoPVd5i9S90mEo/0RJTPYMLVEgcmuvtY2iRFfNQVdPWry8s9XobMXamPlmDyA5r4J2XNfYlZWYDfdHfPNBrV191l/pZBGdU9aOM8vzZilZUFwT03Vhds=,iv:kWX7edmsE9v0kGeH2ymuEMIS5mP5Dy2azsJRKwpKrv4=,tag:FB3+vgozChk+x162gfEYlA==,type:str]
     pgp: []
     encrypted_regex: ^(data|spec|values)$
     version: 3.8.1
