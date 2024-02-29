@@ -1,279 +1,36 @@
-apiVersion: v1
-kind: ConfigMap
+apiVersion: ENC[AES256_GCM,data:tr0=,iv:5wk20Il+RG9y2VWFII30nnWeZLfz7preMee4hkQpCTU=,tag:8jV+xl6VxKlPwMTfQEmY7w==,type:str]
+kind: ENC[AES256_GCM,data:LkQSOBzNpsEs,iv:z0ezq/mjxyojYx9vwolDE1cZqql9huVwzd+KKMNBF7k=,tag:SHqNu60IXV9hUCs8g981oA==,type:str]
 metadata:
-  name: homepage
-  namespace: default
-  labels:
-    app: homepage
+    name: ENC[AES256_GCM,data:D1kEVpAHp3U=,iv:+jbk7ksJwFEkGHv6uWeht1KoTlyFvVar9hNl6KwLDJA=,tag:80YKmnEzWUK4R2qIghHHCQ==,type:str]
+    namespace: ENC[AES256_GCM,data:uZ89WATXMA==,iv:o832UiZP7J+oeFvgO3jJZ2Wlorx6TC/xyqWgGQzQ1og=,tag:rbImVFzqBebn4OrmePvR3w==,type:str]
+    labels:
+        app: ENC[AES256_GCM,data:PjeN+yx+9+k=,iv:GqsFrmjQBIH7ewAb7ykUKdRgP+f/pC9HS9pMHlxzQfQ=,tag:QLm6V/SN/lSWv4OrBs7IRQ==,type:str]
 data:
-  kubernetes.yaml: |
-    mode: cluster
-  settings.yaml: |
-    title: Talwood Homepage
-
-    background:
-      image: https://cdnb.artstation.com/p/assets/images/images/006/897/659/large/mikael-gustafsson-wallpaper-mikael-gustafsson.jpg
-      blur: sm # sm, md, xl... see https://tailwindcss.com/docs/backdrop-blur
-      saturate: 100 # 0, 50, 100... see https://tailwindcss.com/docs/backdrop-saturate
-      brightness: 50 # 0, 50, 75... see https://tailwindcss.com/docs/backdrop-brightness
-      opacity: 100 # 0-100
-
-    theme: dark
-    color: slate
-
-    useEqualHeights: true
-
-    layout:
-      Hypervisor:
-        header: true
-        style: row
-        columns: 4
-      #Containers:
-      #  header: true
-      #  style: row
-      #  columns: 4
-      #DNS:
-      #  header: true
-      #  style: row
-      #  columns: 4
-      #Network:
-      #  header: true
-      #  style: row
-      #  columns: 4
-      #Remote Access:
-      #  header: true
-      #  style: row
-      #  columns: 4
-      #Storage:
-      #  header: true
-      #  style: row
-      #  columns: 4
-      #Media:
-      #  header: true
-      #  style: row
-      #  columns: 4
-      #Home Automation:
-      #  header: true
-      #  style: row
-      #  columns: 4
-      #Other:
-      #  header: true
-      #  style: row
-      #  columns: 4
-  custom.css: ""
-  custom.js: ""
-  bookmarks.yaml: ""
-  services.yaml: |
-    - Hypervisor:
-        - Proxmox:
-            icon: proxmox.svg
-            href: {{HOMEPAGE_VAR_PROXMOX_URL}}
-            description: waterdeep
-            widget:
-                type: proxmox
-                url: "{{HOMEPAGE_VAR_PROXMOX_URL}}"
-                username: "{{HOMEPAGE_VAR_PROXMOX_USER}}"
-                password: "{{HOMEPAGE_VAR_PROXMOX_API_KEY}}"
-                node: waterdeep
-        - Proxmox:
-            icon: proxmox.svg
-            href: "{{HOMEPAGE_VAR_PROXMOX_URL}}"
-            description: candlekeep
-            widget:
-                type: proxmox
-                url: "{{HOMEPAGE_VAR_PROXMOX_URL}}"
-                username: "{{HOMEPAGE_VAR_PROXMOX_USER}}"
-                password: "{{HOMEPAGE_VAR_PROXMOX_API_KEY}}"
-                node: candlekeep
-        - Proxmox:
-            icon: proxmox.svg
-            href: "{{HOMEPAGE_VAR_PROXMOX_URL}}"
-            description: neverwinter
-            widget:
-                type: proxmox
-                url: "{{HOMEPAGE_VAR_PROXMOX_URL}}"
-                username: "{{HOMEPAGE_VAR_PROXMOX_USER}}"
-                password: "{{HOMEPAGE_VAR_PROXMOX_API_KEY}}"
-                node: neverwinter
-        #- Proxmox:
-        #    icon: proxmox.svg
-        #    href: "{{HOMEPAGE_VAR_PROXMOX_URL}}"
-        #    description: pve4
-        #    widget:
-        #        type: proxmox
-        #        url: "{{HOMEPAGE_VAR_PROXMOX_URL}}"
-        #        username: "{{HOMEPAGE_VAR_PROXMOX_USER}}"
-        #        password: "{{HOMEPAGE_VAR_PROXMOX_API_KEY}}"
-        #        node: storinator
-    #- Containers:
-    #    - Longhorn:
-    #        icon: longhorn.svg
-    #        href: "{{HOMEPAGE_VAR_LONGHORN_URL}}"
-    #        description: k8s storage
-    #    - Portainer:
-    #        icon: portainer.svg
-    #        href: "{{HOMEPAGE_VAR_PORTAINER_URL}}"
-    #        description: docker
-    #        widget:
-    #            type: portainer
-    #            url: "{{HOMEPAGE_VAR_PORTAINER_URL}}"
-    #            env: 2
-    #            key: "{{HOMEPAGE_VAR_PORTAINER_API_KEY}}"
-    #- DNS:
-    #    - Pi-Hole1:
-    #        icon: pi-hole.svg
-    #        href: "{{HOMEPAGE_VAR_PIHOLE_URL_1}}"
-    #        description: quasar
-    #        widget:
-    #            type: pihole
-    #            url: "{{HOMEPAGE_VAR_PIHOLE_URL_1}}"
-    #            key: "{{HOMEPAGE_VAR_PIHOLE_API_KEY_1}}"
-    #    - Pi-Hole2:
-    #        icon: pi-hole.svg
-    #        href: "{{HOMEPAGE_VAR_PIHOLE_URL_2}}"
-    #        description: blazar
-    #        widget:
-    #            type: pihole
-    #            url: "{{HOMEPAGE_VAR_PIHOLE_URL_2}}"
-    #            key: "{{HOMEPAGE_VAR_PIHOLE_API_KEY_2}}"
-    #    - Pi-Hole3:
-    #        icon: pi-hole.svg
-    #        href: "{{HOMEPAGE_VAR_PIHOLE_URL_3}}"
-    #        description: electron
-    #        widget:
-    #            type: pihole
-    #            url: "{{HOMEPAGE_VAR_PIHOLE_URL_3}}"
-    #            key: "{{HOMEPAGE_VAR_PIHOLE_API_KEY_3}}"
-    #- Network:
-    #    - UniFi:
-    #        icon: unifi.svg
-    #        href: "{{HOMEPAGE_VAR_UNIFI_NETWORK_URL}}"
-    #        description: network
-    #        widget:
-    #            type: unifi
-    #            url: "{{HOMEPAGE_VAR_UNIFI_NETWORK_URL}}"
-    #            username: "{{HOMEPAGE_VAR_UNIFI_NETWORK_USERNAME}}"
-    #            password: "{{HOMEPAGE_VAR_UNIFI_NETWORK_PASSWORD}}"
-    #    - Uptime Kuma:
-    #        icon: uptime-kuma.svg
-    #        href: "{{HOMEPAGE_VAR_UPTIME_KUMA_URL}}"
-    #        description: internal
-    #        widget:
-    #            type: uptimekuma
-    #            url: "{{HOMEPAGE_VAR_UPTIME_KUMA_URL}}"
-    #            slug: unrelatedfamily
-    #    - Uptime Robot:
-    #        icon: https://play-lh.googleusercontent.com/cUrv0t00FYQ1GKLuOTvv8qjo1lSDjqZC16IOp3Fb6ijew6Br5m4o16HhDp0GBu_Bw8Y=w240-h480-rw
-    #        href: https://uptimerobot.com/dashboard
-    #        description: external
-    #        widget:
-    #            type: uptimerobot
-    #            url: https://api.uptimerobot.com
-    #            key: "{{HOMEPAGE_VAR_UPTIME_ROBOT_API_KEY}}"
-    #- Storage:
-    #    - TrueNAS:
-    #        icon: truenas.svg
-    #        href: "{{HOMEPAGE_VAR_TRUENAS_URL}}"
-    #        description: scale
-    #        widget:
-    #            type: truenas
-    #            url: "{{HOMEPAGE_VAR_TRUENAS_URL}}"
-    #            key: "{{HOMEPAGE_VAR_TRUENAS_API_KEY}}"
-    #    - MinIO:
-    #        icon: minio.svg
-    #        href: "{{HOMEPAGE_VAR_MINIO_URL}}"
-    #        description: object storage
-    #- Media:
-    #    - Plex:
-    #        icon: plex.svg
-    #        href: "{{HOMEPAGE_VAR_PLEX_URL}}"
-    #        description: media server
-    #        widget:
-    #            type: plex
-    #            url: "{{HOMEPAGE_VAR_PLEX_URL}}"
-    #            key: "{{HOMEPAGE_VAR_PLEX_API_TOKEN}}"
-    #    - Tautulla:
-    #        icon: tautulli.svg
-    #        href: "{{HOMEPAGE_VAR_TAUTULLI_URL}}"
-    #        description: plex stats
-    #        widget:
-    #            type: tautulli
-    #            url: "{{HOMEPAGE_VAR_TAUTULLI_URL}}"
-    #            key: "{{HOMEPAGE_VAR_TAUTULLI_API_KEY}}"
-    #    - HDHomerun:
-    #        icon: hdhomerun.png
-    #        href: "{{HOMEPAGE_VAR_HDHOMERUN_URL}}"
-    #        description: flex 4k
-    #        widget:
-    #            type: hdhomerun
-    #            url: "{{HOMEPAGE_VAR_HDHOMERUN_URL}}"
-    #- Remote Access:
-    #    - PiKVM:
-    #        icon: https://avatars.githubusercontent.com/u/41749659?s=200&v=4
-    #        href: "{{HOMEPAGE_VAR_PIKVM_URL}}"
-    #        description: remote kvm
-    #    - IPMI:
-    #        icon: https://upload.wikimedia.org/wikipedia/commons/1/1d/Super_Micro_Computer_Logo.svg
-    #        href: "{{HOMEPAGE_VAR_IPMI_1_URL}}"
-    #        description: storinator
-    #    - IPMI:
-    #        icon: https://upload.wikimedia.org/wikipedia/commons/1/1d/Super_Micro_Computer_Logo.svg
-    #        href: "{{HOMEPAGE_VAR_IPMI_2_URL}}"
-    #        description: hl15
-    #    - Netboot:
-    #        icon: https://netboot.xyz/img/nbxyz-laptop.gif
-    #        href: "{{HOMEPAGE_VAR_NETBOOT_URL}}"
-    #        description: network boot utility
-    #    - Tripp Lite:
-    #        icon: https://upload.wikimedia.org/wikipedia/commons/f/f9/Tripp_Lite_logo.svg
-    #        href: "{{HOMEPAGE_VAR_UPS_1_URL}}"
-    #        description: 1500
-    #    - Eaton:
-    #        icon: https://cdn11.bigcommerce.com/s-fg272t4iw0/images/stencil/1280x1280/products/2549/2802/C-12556__63907.1557814942.jpg?c=2
-    #        href: "{{HOMEPAGE_VAR_UPS_2_URL}}"
-    #        description: 5p
-    #- Home Automation:
-    #    - Home Assistant:
-    #        icon: home-assistant.svg
-    #        href: "{{HOMEPAGE_VAR_HOME_ASSISTANT_URL}}"
-    #        description: home
-    #        widget:
-    #            type: homeassistant
-    #            url: "{{HOMEPAGE_VAR_HOME_ASSISTANT_URL}}"
-    #            key: "{{HOMEPAGE_VAR_HOME_ASSISTANT_API_KEY}}"
-    #    - UniFi:
-    #        icon: https://play-lh.googleusercontent.com/DmgQvSdocOrGr0D0rxSBE9sqh23Fw3ck3BgKRN788cZnOKgcZlcEAFRYwmUbp6vMTVI
-    #        href: "{{HOMEPAGE_VAR_UNIFI_PROTECT_URL}}"
-    #        description: protect
-    #    - Scryped:
-    #        icon: https://www.scrypted.app/images/web_hi_res_512.png
-    #        href: "{{HOMEPAGE_VAR_SCRYPTED_URL}}"
-    #        description: mgmt console
-    #    - Broadlink Control:
-    #        icon: https://nwzimg.wezhan.net/contents/sitefiles3606/18030899/images/5430245.png
-    #        href: "{{HOMEPAGE_VAR_BROADLINK_CONTROL_URL}}"
-    #        description: light control
-    #- Other:
-    #    - GitLab:
-    #        icon: gitlab.svg
-    #        href: https://gitlab.com
-    #        description: source code
-    #    - GitHub:
-    #        icon: github.svg
-    #        href: https://github.com
-    #        description: source code
-    #    - Shlink:
-    #        icon: https://shlink.io/images/shlink-logo-blue.svg
-    #        href: "{{HOMEPAGE_VAR_SHLINK_URL}}"
-    #        description: dashboard
-  widgets.yaml: |
-    - resources:
-        cpu: true
-        memory: true
-        disk: /
-
-    - datetime:
-        text_size: xl
-        format:
-          timeStyle: short
-  docker.yaml: ""
+    kubernetes.yaml: ENC[AES256_GCM,data:yNzGBa1aTCvgToxPuWc=,iv:KXFNAFx59DPhEqYQsQ6B5I1dGuS57kEL5qKCsfQyxvE=,tag:xRPhWZEX0r9Y/43mKat3bg==,type:str]
+    settings.yaml: ENC[AES256_GCM,data:7pw6/RvsE0mnkBYLLbxJp1335qc/njA3OrdY3+lNdpY2//MtqgABWY7mgXdr/sIWwdkDPPV3tQm5EoGDF4bB/DJFy5Nq+3LcIQ48M6VJvfcxbKXwi56idKJeuyvxXgYt1k+02KuUuDqNtvH+xjHti6q3SHvTPksVIFIBYApWYk21voeSIh4KHKy7JcBrCH/dzvMBnCphHdwBD488pXAu4sCUCIMNI3nlo4I/ZM/xhhUQ+ahVR25TTnLvCuNw+fbMGaV5xzoXI4op2N2BSx7Aj1mAVTG3ErLy4WMoxRg24jV6D4FmjliFR4I6FTEpXkziKPu+wXbFAYYl1i6Y/1+wrdB7o5ZWs4X8F0qGLuU/vjFPuw5H6TXUQ6Jg+aDRPPlL9y+Mm6n6u94HxHh3iDCoM4yFbPGf7pH03541rpZED7EcvBoqjdR0+W2mPV+IlAH6wT1Nd5kxWSxcyCS5Wt6ieNuX7YmJ5umEltq9OjJtCeWs8AGKF1JQXjDtIbSoyD4S4z3X9PEdgB0FXHKtOBu+5TOjwOcxFZhttjLudUC9OzX9y6rM2n3PMaBUSm42yUehDb/BNUvsM9paESRowSYsWBwJSP0Tw4qVkWXffxz9JSYx0j1KMdCiJP+CpRWXba8SErwXTAhvnla8UerQ0zfDLs05F91dk74CPwaT7Qq/sxuFixvwIbg5BJim0OAQggTCf1y5ZUpVePBsXezVYwQysU7jTJjVaPuEN7ANWUojfjoJbT7ID8UVNEVTJ1SivR8whdgRiVTeI+kH8Iw9IUq0wXllgwtqJ5EeB8hzTXwmbmNqZcRzJJ/1wuhSBeNGPuh5giuTv7Z5/WpXYdqBQT7srUCpgxd2ZxjwoRhRDuTiJz86iZAWqWCSr61KMSuLcbKjVC2CWTo78YzNb8KYXHlve+m879Si9mFYOKI9l6QkOvThCqGRdakK1tXLpY08pG1SwizqjTUL/j+MLUBaR34kXSdgHYK1WRuwJgNLYW5gUA6/qSktcrXfikyY6hPMVTtxmh5ooun7Yl/R5izuU4r0RdLaXmPMPuC/NJ5AUxNbfYMMaVw8dYHgl8e4bPbdOEskUmuNvCOrrt6gK1x4o5w7gpEhbOLFKVWDkn3WIN1hART4wwQLTu9Tby402C5sZkPLL4rIfRcZ1q22IC7IMCMK2GtnOiqZGO/uNclm0aR56aHHhru6GgGc2SnHyr2SxRZN+vHXEArhMpfwp0+rkqIMiBKelQ/pfx4T1kQi1yruJJ8+1Ooa2nABTOG+qdZcTnQAjk82n5jzkAeMDvdV9iYHH/fRDaeFmRrd0XfU8QIN2c26GM8thV26XLHt6cioTGtjjKFNbFl+bxhyikBusaUAXnV/WjZ6FwQc9fNvZH6U7VPvXPwR60GwvrgfMCC1Qg==,iv:DP2C/De2mRunN85QEFt/ABjeuJAFeYpCtKDkF7UGWYY=,tag:1J81bU7X8lKz28qylt3ZaA==,type:str]
+    custom.css: ""
+    custom.js: ""
+    bookmarks.yaml: ""
+    services.yaml: ENC[AES256_GCM,data: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,iv:lVwwSifDKUan36kdvXPeu7t6Zch4KImtW4nqqAkDeRM=,tag:HiNKsm6jwvlEhoqn/neWEQ==,type:str]
+    widgets.yaml: ENC[AES256_GCM,data:L+47zs99W+PecC/601B0yEULAisFt1rMEJmobSuoNujON4PpFL3o2Zq/ugDqd0Nhw/8OuRFobjpcemCqGDqQkgIBRQ+zLTRk0hx/r9Hmv8/CR2sYhOvxF82M0AZsWgg0tuDa3dotIr9deEni9mVj24kd2AoL90Mmht4=,iv:8GFd1vsR25C7efpbAcJ4fNoeoyCi70oRPmr0e3HRvLg=,tag:nV4YSznPacma81Dd94UkMQ==,type:str]
+    docker.yaml: ""
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age1f38l3w2h64surqtq8qtcqqg9lfs7qqmtw8g9xp22fwl4esgcyvzsv4yjsg
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBDT1RUdG43a0lKbHp5WlZY
+            QXVrNFBJQ3VNemNwY2JCTGZGR0JRTFhLMWpBCmhWL2JVL0xnSG9HdEtpUExybkZj
+            VWI5UjJDT2t2UVJ2S1NIWndGeEIvUlUKLS0tIFFQNVlmMEJqRk9QMFVscDNNSmFO
+            RkU5V2pHYnh5aG1URkNKYTVDbHBXVjQKN+rXjAxueUCvbwMt4tPG1Z4ShOSpKCnQ
+            +45yZVJQtJaHE+SlW9vzfL0hhZW00NOw/RAllc5N/M57Irq6jHb5dQ==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2024-02-29T01:55:04Z"
+    mac: ENC[AES256_GCM,data:/7X/EzGpSHoUNAY0NYJLKM7M12WMl3EAfRi2J5tc9FKU5tnn7IIZonZsVCXIxtFdhE8GzWl01DSF6W7q3Poy2Nr5sktPvVXqeOVddgjsZ4DuUyyGeR6o3kougKFJWsccCeSbUOh96ayMyi2e2r7YaHOSUUrMAHBId0qxIvlsrSQ=,iv:5RDQ4SuD9B5Zx/P4nrQlzo8VH77T+R21cVvB1ARcGpg=,tag:4NIcF1p4dtEgJWPPNaDZoA==,type:str]
+    pgp: []
+    unencrypted_suffix: _unencrypted
+    version: 3.8.1
