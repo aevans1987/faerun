@@ -24,7 +24,7 @@ metadata:
   namespace: networking
 spec:
   type: ExternalName
-  externalName: "10.2.50.83"
+  externalName: "artificer.local.unrelated.family"
   ports:
     - name: https
       port: 443
