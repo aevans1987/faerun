@@ -1,0 +1,32 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: faerun-ingress-route
+  namespace: networking
+  annotations: 
+    kubernetes.io/ingress.class: traefik-external
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(`overseerr.unrelated.family`)
+      kind: Rule
+      services:
+        - name: overseerr-docker
+          port: 5055
+  tls:
+    secretName: unrelated-family-tls
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: overseerr-docker
+  namespace: networking
+spec:
+  type: ExternalName
+  externalName: "10.2.50.83"
+  ports:
+    - name: https
+      port: 5055
+      protocol: TCP
+      targetPort: 5055
