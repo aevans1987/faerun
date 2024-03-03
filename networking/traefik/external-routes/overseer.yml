@@ -13,7 +13,7 @@ spec:
       kind: Rule
       services:
         - name: overseerr-docker
-          port: 5055
+          port: 443
   tls:
     secretName: unrelated-family-tls
 ---
@@ -24,9 +24,9 @@ metadata:
   namespace: networking
 spec:
   type: ExternalName
-  externalName: "10.2.50.83"
+  externalName: "overseerr.local.unrelated.family"
   ports:
-    - name: http
-      port: 5055
+    - name: https
+      port: 443
       protocol: TCP
-      targetPort: 5055
+      targetPort: 443
