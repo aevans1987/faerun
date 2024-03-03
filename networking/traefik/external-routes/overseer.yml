@@ -12,7 +12,7 @@ spec:
     - match: Host(`overseerr.unrelated.family`)
       kind: Rule
       services:
-        - name: overseerr-docker
+        - name: arr-docker
           port: 443
   tls:
     secretName: unrelated-family-tls
@@ -20,7 +20,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: overseerr-docker
+  name: arr-docker
   namespace: networking
 spec:
   type: ExternalName
