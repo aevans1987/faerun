@@ -36,6 +36,44 @@ spec:
   tls:
     secretName: local-unrelated-family-tls
 ---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: radarr-ingress-route
+  namespace: networking
+  annotations: 
+    kubernetes.io/ingress.class: traefik-external
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(`radarr.local.unrelated.family`)
+      kind: Rule
+      services:
+        - name: arr-docker
+          port: 443
+  tls:
+    secretName: local-unrelated-family-tls
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: prowlarr-ingress-route
+  namespace: networking
+  annotations: 
+    kubernetes.io/ingress.class: traefik-external
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(`prowlarr.local.unrelated.family`)
+      kind: Rule
+      services:
+        - name: arr-docker
+          port: 443
+  tls:
+    secretName: local-unrelated-family-tls
+---
 apiVersion: v1
 kind: Service
 metadata:
