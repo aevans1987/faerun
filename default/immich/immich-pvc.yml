@@ -4,7 +4,7 @@ metadata:
   name: immich-pvc
   namespace: default
 spec:
-  storageClassName: nfs-immich
+  storageClassName: nfs
   accessModes:
     - ReadWriteMany
   resources:
