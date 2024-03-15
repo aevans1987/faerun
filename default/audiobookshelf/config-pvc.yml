@@ -4,6 +4,7 @@ metadata:
   labels:
     io.kompose.service: audiobookshelf-config
   name: audiobookshelf-config
+  namespace: default
 spec:
   accessModes:
     - ReadWriteOnce

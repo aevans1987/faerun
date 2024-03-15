@@ -2,6 +2,7 @@ apiVersion: ENC[AES256_GCM,data:ptU=,iv:gKyUqiq+T/737QlkLFH6jg7KHD3ZiRXmaT1+xnN1
 kind: ENC[AES256_GCM,data:kjwJDTNxENfaccWUqz2q6w==,iv:U/93i2z2EGRp9qpDD4crEK6LVTzB1zM0HgzczFYUnNU=,tag:34TNUHVigV+sTp037ShJYw==,type:str]
 metadata:
     name: ENC[AES256_GCM,data:jBVFW+/zenwlsqxpzCfgPsvS,iv:/slPDvZURisLzmK4u2XNTFpW9orToi4KqMKhm3rizO0=,tag:2VcCh7XaOwJp7mDqwkhYhw==,type:str]
+    namespace: ENC[AES256_GCM,data:QHmT3V89dg==,iv:HmGOvJ8fAgwdVbt8M8c1kTHwT3PKLjuBhw+fJFzidgU=,tag:kAJrl1fsRURSYl9PBxL9qg==,type:str]
 spec:
     capacity:
         storage: ENC[AES256_GCM,data:BE664D6I,iv:UrvJd+okjNq3gPjBfYDlIa26ge5TtGJxT0aHqUe5Fk4=,tag:Ui1jF7vbUa8zulLuCuJjKA==,type:str]
@@ -31,8 +32,8 @@ sops:
             ZzYvYkhHQ29JODMxMTlKcnFBbUUwbWcKzI3mwh5S5F2RTB/U2jBSKyJ8FsHTs3pI
             Ip1N4HI1Qj41a5nb2zyRc3d6S33u7E+RwB92c8ek7mXljlYzbrYoEQ==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2024-03-15T13:07:27Z"
-    mac: ENC[AES256_GCM,data:xibeESxBz2x/qNokYxoTNp3cAEeqvCDvth7g9l6Z46Y6+NJqDopo4xYYk3une0mgQHzvd9YC2t24/ygIFyfB8EnaoC1k62T3RByKYCJei8/scBr3Ll5smHXpUwOvq0HhlIR1Co7Ri8JQVSM2+J+91cCNLqa8eybiLzhGEZ0qCaM=,iv:Ccr35tEUoIXn+ANfLq7jYqbGpBKW+pW9XJeFQKY9KUU=,tag:xQ5zC/VLGG0MPZeBJ22YYQ==,type:str]
+    lastmodified: "2024-03-15T13:47:21Z"
+    mac: ENC[AES256_GCM,data:qGZq8dd/e3pQImMZY3got8DWCZqbG/sLPyhYOEUiXlD8wgfOApaXs+a8BQZ+pqQtZ0pS/HRFTKtOJBq6Ha7dsArowSx8xR7mwRf7Qk/nlnTO+ULU57iK8LCecI/zQdKzMBXFlxsL3wkNpWhM0I2fd4dgXDvOy9v3v5oBaIDpD7U=,iv:EZyt1xA+vHeJgTuiZEzHO/+1tkr7Tn/3YWwQxAxDNtk=,tag:TuIBv0z7y8pS7hT2lzLUFA==,type:str]
     pgp: []
     unencrypted_suffix: _unencrypted
     version: 3.8.1
