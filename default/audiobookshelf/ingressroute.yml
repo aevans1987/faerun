@@ -12,7 +12,7 @@ spec:
     - match: Host(`abs.unrelated.family`)
       kind: Rule
       services:
-        - name: audiobookshelf
+        - name: audiobookshelf-service
           port: 80
 #      middlewares:
 #        - name: default-headers
