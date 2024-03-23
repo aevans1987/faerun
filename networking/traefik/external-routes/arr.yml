@@ -33,7 +33,7 @@ spec:
       services:
         - name: arr-docker
           port: 443
-    - match: Host('books.unrelated.family')
+    - match: Host(`books.unrelated.family`)
       kind: Rule
       services:
         - name: arr-docker
