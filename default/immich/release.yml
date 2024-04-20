@@ -27,7 +27,7 @@ spec:
             DB_PASSWORD: ENC[AES256_GCM,data:c6yXeMcbsKjHyksJTy0Yvc72aS+Bm/hZ9dSlbO2X1JTgNEohjWBeB2i8fK4f22bm7LGx7Aa+cP4=,iv:1LXcxSBvIMe/afvELgpnwKrd4jmX7ESmxS5y70SGVZY=,tag:xQ7NQbUDNErql6RHDP7iMQ==,type:str]
             IMMICH_MACHINE_LEARNING_URL: ENC[AES256_GCM,data:MGiS7kXs8S6P+td7MtRwsAWB8Ma4udyy2vQMhiAgthYoxrf4NHx+NG+S7AEvcosA5r+TcsDtX7HZ8NdP,iv:Kjs7zajqgV6vHxeu2Oxtqm6IeeQNmecE+pgxBdrg1dI=,tag:ebIWrDx+7EKfUm6vPk1UgA==,type:str]
         image:
-            tag: ENC[AES256_GCM,data:I9kQOkG97+4=,iv:zEQwpt1A8LCL85U2GZguxFUyms+cd6QcfDD+K/0N92c=,tag:214q06TR9v+rW87XpFKoMA==,type:str]
+            tag: ENC[AES256_GCM,data:/vytbMaRXOk=,iv:O6kfFJVs3PofnXk1UkSSJCcGaNghxGkR8RlLu1cX+S4=,tag:FEFOOwc43zVWJCKVudUSDQ==,type:str]
         immich:
             persistence:
                 #ENC[AES256_GCM,data:pvdH4LcngPWerUDyDNv6bGVd60FkD40VGxt9rBv/wRxWcPIsmSVwm0bmcSFfRfzjLZb2G0oR4yxxDZNzk9ruAvITdos=,iv:6nCE4qS9LE8WWEAk8lPRwWtkzgKt3sKJRnJc4tvsR2s=,tag:Ju7QbARlpNRoElziZe2XOw==,type:comment]
@@ -71,8 +71,8 @@ sops:
             anBvbkhOUGpMd0pQM3U4RHdBSXlWNDQKMs09XgAwvfLWvLlcQzAimy2rN5r7mdUK
             wReUXO6muANftxarV0VvbQhCOW59sEl7VGXcDgHrWAjv6BpynEsE9A==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2024-04-01T19:42:11Z"
-    mac: ENC[AES256_GCM,data:vrUc98LkmhkvRKSZkFlsIN2ZORE7Gol9O2dEhPvu4ioriz05sNS0/ZeemCpdmcgxIBiE+hu8bZlq6ZVkHSYCV9ZzpkvifcGXaNC5w5AVuBpwH+FCPapH7el48UdZGGrJrORJ2IxlOJQhESmzrS6chpFbufFYwSB9D82Dow5A0Dc=,iv:tFv/eyQYmfL3d6ktqYBosJwKt8UTQVz+0sCZsXghSIg=,tag:zBm2Fj/3Q0vrYe3ggFFYCA==,type:str]
+    lastmodified: "2024-04-20T02:59:11Z"
+    mac: ENC[AES256_GCM,data:1eBu/OaGZnJocNnjzTdMYllZx5zF9WzZ770r7giHk3VL7T+lv25Hcwf8pr9U6cSgRAfPe5sla5IlLg5O/pxTJnX4JeZ5OM50Qs+dErEOFb/rqFrxf+pdsmeoV0JiARpk3olbxhI+hLIvuHKWTE6tOqggU4QcU2Yu6m3zddYFf8U=,iv:YSIJDTVioT+tTHTk97jFlKReFLh9Ub8tHw7fmob7kJc=,tag:lP+tsPU858w8Al0X+N3klQ==,type:str]
     pgp: []
     unencrypted_suffix: _unencrypted
     version: 3.8.1
