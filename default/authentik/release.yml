@@ -16,7 +16,7 @@ spec:
     values:
         global:
             image:
-                tag: ENC[AES256_GCM,data:vQY+QRJlX7A=,iv:w8LnvdDq7xKLLXLm8/asn164gR+J/SHNjzjZZuUoHmQ=,tag:zEAgazbSdAoVRI6m2ObZ6w==,type:str]
+                tag: ENC[AES256_GCM,data:TS9f4AfkCWM=,iv:zyB9JFTC3vHfx+Y/USsurZffJ/3+16PuQZ20kSvsHrg=,tag:P+0TJLivYaK9VqQs4mdRQQ==,type:str]
         authentik:
             #ENC[AES256_GCM,data:z4cWICiT8iMwC5kXft5f8br3LAApBqrEaEwnpsjUsfePbgI=,iv:THTREyOm6kERyfYI0Q5Bzjx0m6QTAmeFBXF0/i/mPic=,tag:OY7wazhRq8VDUHYzyB5PTg==,type:comment]
             log_level: ENC[AES256_GCM,data:5bO6tQ==,iv:HHHxEzSLKOcXx/DHHa4mvkuCWzLTKVjQpUqTjRjsNdU=,tag:ouK3ocHEmKhR8NeTzG3XzQ==,type:str]
@@ -125,8 +125,8 @@ sops:
             dGx4b1ZNS3VrNXNEOHViWE5VZGZETWcKay9hGaSrpy8GopUzZSbixxtNs3lCS6Vb
             S824VTMzrV/AJhn4zgVM3/ZgQUROkqD/xg2Ej46jxT+29Yj9cxZyCg==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2024-04-25T23:58:30Z"
-    mac: ENC[AES256_GCM,data:6F5OWi4UhegMISg35nDR+8LE/ns6MS1Y8rFkiYi/Z0WkdNhKhY8yBMYgqZedaysv0gACNG1ICkl+DWo87JnkTxy8IyNOhSwshtnZOcy55dL2M6KOUjPvO8Oc/cRrFf5G8D6GzoyGSH+lUETWFTjt1FqzQ7+IYIze5cjQqC/Pi4s=,iv:wncqyWBmn0Nd3kXf809TwvFn350GML+SaumuRZFcqw8=,tag:XFEBDJ8bUPpAkS5so5C2Ew==,type:str]
+    lastmodified: "2024-04-26T00:10:00Z"
+    mac: ENC[AES256_GCM,data:kf9tC27nNBpaaq6B53aBzq8fzHd0ChIeMZwzrfjEWZ2FjhpAXvgCQ53chRKCFh/ZgQEdrIOJAInWJiUTuXJjwzfYkqKByZb6RfcpHZ3A5uDKMrmFKOpgb4UE4DJpd/eJTn03UnRote20FkjRejrabtBJsECgTTYhQtIlfM0K5eg=,iv:XRa4HtDAl+cXznlQgCLIftIsIAgiqJQvmubqtLkOzRs=,tag:RJ1neQJI8WzJ2SuNzclrQA==,type:str]
     pgp: []
     encrypted_regex: ^(data|spec|values)$
     version: 3.8.1
