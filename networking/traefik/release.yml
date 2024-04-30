@@ -7,7 +7,7 @@ spec:
   interval: 5m
   chart:
     spec:
-      version: 'v27*'
+      version: 'v27.0.2'
       chart: traefik
       sourceRef:
         kind: HelmRepository
