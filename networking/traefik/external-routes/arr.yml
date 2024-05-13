@@ -44,6 +44,25 @@ spec:
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
+  name: foundry-v11-ingress-route
+  namespace: networking
+  annotations: 
+    kubernetes.io/ingress.class: traefik-external
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(`f11.unrelated.family`)
+      kind: Rule
+      services:
+        - name: arr-docker
+          port: 443
+  tls:
+    secretName: unrelated-family-tls
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
   name: tautulli-ingress-route
   namespace: networking
   annotations: 
