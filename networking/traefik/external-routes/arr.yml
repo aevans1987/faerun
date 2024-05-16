@@ -212,6 +212,25 @@ spec:
   tls:
     secretName: local-unrelated-family-tls
 ---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: hephruntus-ingress-route
+  namespace: networking
+  annotations: 
+    kubernetes.io/ingress.class: traefik-external
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(`hephrintus.local.unrelated.family`)
+      kind: Rule
+      services:
+        - name: hephrintus-service
+          port: 443
+  tls:
+    secretName: local-unrelated-family-tls
+---
 apiVersion: v1
 kind: Service
 metadata:
@@ -220,6 +239,20 @@ metadata:
 spec:
   type: ExternalName
   externalName: "10.2.50.83"
+  ports:
+    - name: https
+      port: 443
+      protocol: TCP
+      targetPort: 443
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: hephrintus-service
+  namespace: networking
+spec:
+  type: ExternalName
+  externalName: "10.2.10.227"
   ports:
     - name: https
       port: 443
