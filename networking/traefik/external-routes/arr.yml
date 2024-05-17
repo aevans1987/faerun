@@ -215,7 +215,7 @@ spec:
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
-  name: spoolman-ingress-route
+  name: home-ingress-route
   namespace: networking
   annotations: 
     kubernetes.io/ingress.class: traefik-external
@@ -229,7 +229,7 @@ spec:
         - name: arr-docker
           port: 443
   tls:
-    secretName: local-unrelated-family-tls
+    secretName: unrelated-family-tls
 ---
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
