@@ -227,7 +227,7 @@ spec:
       kind: Rule
       services:
         - name: arr-docker
-          port: 443
+          port: 9090
   tls:
     secretName: local-unrelated-family-tls
 ---
